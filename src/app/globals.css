@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html,
+:root {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-jetBrainsMono), monospace;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Improved animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    /* Default theme colors - set to green */
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+    --ring: var(--primary);
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --radius: 0.5rem;
+
+    /* Chart colors for data visualization */
+    --chart-1: 142 76% 36%;
+    --chart-2: 221 83% 53%;
+    --chart-3: 270 76% 47%;
+    --chart-4: 24 95% 40%;
+    --chart-5: 336 80% 42%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+    --ring: var(--primary);
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: var(--primary);
+  }
+
+  /* Custom scrollbar for better UX */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--secondary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.4);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.6);
+  }
+}
+
+@layer components {
+
+  /* Code block styling for developer tools */
+  .code-block {
+    @apply rounded-md bg-secondary p-4 font-mono text-sm;
+    position: relative;
+    overflow-x: auto;
+  }
+
+  .code-block-header {
+    @apply flex items-center justify-between border-b border-border p-2 text-xs font-medium text-muted-foreground;
+  }
+
+  /* Input and output areas common in developer tools */
+  .tool-panel {
+    @apply rounded-lg border border-border bg-card p-4 shadow-sm transition-all duration-300;
+  }
+
+  /* Card styles */
+  .feature-card {
+    @apply rounded-xl border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-2px];
+  }
+
+  /* Icon container */
+  .icon-container {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-slide-up {
+    animation: slideUpFade 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 2s infinite;
+  }
+
+  /* Custom utility for code syntax highlighting */
+  .syntax-keyword {
+    @apply text-primary font-bold;
+  }
+
+  .syntax-string {
+    @apply text-green-600 dark:text-green-400;
+  }
+
+  .syntax-comment {
+    @apply text-muted-foreground italic;
+  }
+
+  .syntax-number {
+    @apply text-orange-600 dark:text-orange-400;
+  }
+
+  /* Glass effect for modern UI */
+  .glass-effect {
+    @apply bg-background/80 backdrop-blur-sm backdrop-filter;
+  }
+
+  /* Gradient text for emphasis */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Improved focus styles for better accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+
+  /* Typography adjustments for readability */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  /* Code element styling for inline code */
+  code:not([class*="language-"]) {
+    @apply rounded-md bg-secondary px-1.5 py-0.5 font-mono text-sm;
+  }
+
+  /* Background grid pattern used in the hero section */
+  .bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  }
+}

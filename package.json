@@ -1,0 +1,66 @@
+{
+  "name": "dev-utils",
+  "version": "0.1.0",
+  "description": "A collection of essential utility tools for developers by Prisma dev labs",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prisma-devlab/dev-utils.git"
+  },
+  "homepage": "https://dev-utils.prisma.io",
+  "bugs": {
+    "url": "https://github.com/prisma-devlab/dev-utils/issues"
+  },
+  "keywords": [
+    "developer",
+    "tools",
+    "utilities",
+    "prisma",
+    "dev-tools",
+    "web-development"
+  ],
+  "author": "Prisma dev labs <devlabs@prisma.io>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.484.0",
+    "next": "14.2.16",
+    "next-themes": "^0.2.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.16",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
