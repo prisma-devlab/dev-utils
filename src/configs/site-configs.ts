@@ -9,7 +9,7 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/prisma-devlab/dev-utils',
     documentation: 'https://github.com/prisma-devlab/dev-utils/blob/master/README.md',
-    contribute: 'https://github.com/prisma-devlab/dev-utils/blob/master/CONTRIBUTING.md',
+    contribute: 'https://github.com/prisma-devlab/dev-utils/blob/master/.github/CONTRIBUTING.md',
     license: 'https://github.com/prisma-devlab/dev-utils/blob/master/LICENSE',
     issues: 'https://github.com/prisma-devlab/dev-utils/issues',
   },
